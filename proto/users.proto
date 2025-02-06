@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+option go_package = "./gen;gen"; 
+package users;
+
+message User {
+    string id = 1;
+    string name = 2;
+    string login = 3;
+    string password = 4;
+}
+
+message CreateUserRequest {
+    User user = 1;
+}
+
+message CreateUserResponse {
+    User user = 1;
+}
+
+message GetUserByLoginRequest {
+    string login = 1;
+}
+
+message GetUserByLoginResponse {
+    User user = 1;
+}
+
+message GetUserByIdRequest {
+    string id = 1;
+}
+
+message GetUserByIdResponse {
+    User user = 1;
+}
+
+service UserService {
+    rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+
+    rpc GetUserByLogin(GetUserByLoginRequest) returns (GetUserByLoginResponse);
+
+    rpc GetUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
+}

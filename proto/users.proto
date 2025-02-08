@@ -36,10 +36,20 @@ message GetUserByIdResponse {
     User user = 1;
 }
 
+message SaveRefreshTokenRequest {
+    string token = 1;
+}
+
+message SaveRefreshTokenResponse {
+
+}
+
 service UserService {
     rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
 
     rpc GetUserByLogin(GetUserByLoginRequest) returns (GetUserByLoginResponse);
 
     rpc GetUserById(GetUserByIdRequest) returns (GetUserByIdResponse);
+
+    rpc SaveRefreshToken(SaveRefreshTokenRequest) returns (SaveRefreshTokenResponse);
 }

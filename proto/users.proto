@@ -10,6 +10,7 @@ message User {
     string name = 2;
     string login = 3;
     string password = 4;
+    string refreshToken = 5;
 }
 
 message CreateUserRequest {

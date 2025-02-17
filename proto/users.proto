@@ -41,7 +41,7 @@ message SaveRefreshTokenRequest {
 }
 
 message SaveRefreshTokenResponse {
-
+    User user = 1;
 }
 
 service UserService {

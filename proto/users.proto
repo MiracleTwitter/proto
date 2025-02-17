@@ -37,7 +37,8 @@ message GetUserByIdResponse {
 }
 
 message SaveRefreshTokenRequest {
-    string token = 1;
+    string login = 1;
+    string token = 2;
 }
 
 message SaveRefreshTokenResponse {
